@@ -1,23 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import ToDoListForm from "./Components/toDoForm";
+import React, {useState} from "react";
 
 function App() {
+
+    const state = [
+        {id: 0, case: 'ыы', editMode: false}
+    ]
+
+    const [deletedItems, setDeletedItems] = useState([])
+    const [doings, setDoings] = useState(state)
+    const [currentItem, setCurrentItem] = useState(null)
+    const [select, setSelect] = useState('current')
+
+    const deletedItem = deletedItems.map(item =>
+        <div key={item.id} className={'form__items'}>
+            <span className = 'form__items__case'>
+                {item.case}
+            </span>
+        </div>
+    )
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <ToDoListForm
+            setSelect = {setSelect}
+            select = {select}
+            setDoings={setDoings}
+            doings={doings}
+            setCurrentItem={setCurrentItem}
+            currentItem={currentItem}
+            setDeletedItems={setDeletedItems}
+            deletedItem={deletedItem}/>
     </div>
   );
 }

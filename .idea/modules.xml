@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/Desktop/learn_react/.idea/learn_react.iml" filepath="$USER_HOME$/Desktop/learn_react/.idea/learn_react.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/to.iml" filepath="$PROJECT_DIR$/.idea/to.iml" />
     </modules>
   </component>
